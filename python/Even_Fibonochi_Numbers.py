@@ -51,23 +51,36 @@ def fib(n):
     else: 
         return fib(n-2) + fib(n-1)
 
-#print(fib(10))
 
-print()
-even_list = []
-def fib_loop():
-    a = 0
+fib(5)
+
+def fib_loop(loop):
+    a = x = c = n = 0
     b = 1
-    c = 0
-    x = 0
-    while c < four_mil:
+    while c < loop:
         c = a + b
         a = b
         b = c
-        if c%2==0 and x < four_mil:
+        n += 1
+        if c%2==0:
             x += c
-    return(x)
+    return(x, n)
 
-print(fib_loop())
+
+# Starting at 0 and 1
+x = 1
+y = 1
+z = 0
+# sum of all odd-valued terms
+total = 0
+while z < 4000000:
+    z = (x+y)
+    if z % 2 == 0:
+        total += z
+    # next iteration
+    x = y
+    y = z
+print(total)
+print(fib_loop(four_mil))
 
 print(f"--- {time.time() - start_time} seconds ---")
